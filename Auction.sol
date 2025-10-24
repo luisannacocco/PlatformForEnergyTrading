@@ -3,7 +3,6 @@
 pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-// import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
@@ -194,10 +193,7 @@ contract Auction is ReentrancyGuard {
       }
   }
 
-// this function withdraw the NFT if no winner or the bid from the winner
-//Consente al venditore di ritirare l'NFT se non ci sono offerte o 
-//se l'asta si è conclusa senza successo, se il vincitore dell'asta non ha reclamato il proprio NFT o 
-//se non lo desidera più.
+// this function withdraw the NFT 
   function withdraw(uint256 tokenId,address tokenContract) external nonReentrant auctionExists(tokenId) {
     AuctionInfo storage auction = auctions[tokenId];
     require(auction.ended, "Auction not ended");
