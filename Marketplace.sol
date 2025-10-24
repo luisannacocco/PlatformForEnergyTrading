@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-//import "./MyERC20.sol";
 
 contract Marketplace is ReentrancyGuard {
   using Counters for Counters.Counter;
